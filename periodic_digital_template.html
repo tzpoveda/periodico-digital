@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>La Voz Paduista — Plantilla</title>
+  <style>
+    /* Reset ligero */
+    :root{
+      --accent:#0b5ed7; /* azul paduista */
+      --paper:#f6f5f3;
+      --text:#222;
+      --muted:#666;
+      --maxw:1100px;
+      --serif: 'Georgia', serif;
+      --sans: 'Arial', sans-serif;
+    }
+    *{box-sizing:border-box}
+    body{font-family:var(--sans);color:var(--text);background:var(--paper);line-height:1.45;margin:0;padding:24px}
+    .container{max-width:var(--maxw);margin:0 auto;background:white;box-shadow:0 6px 18px rgba(0,0,0,0.06);}
+
+    /* Cabecera tipo periódico */
+    header{padding:26px 28px;border-bottom:4px solid var(--accent);display:flex;align-items:center;gap:18px}
+    .masthead{flex:1}
+    .title{font-family:var(--serif);font-size:34px;letter-spacing:1px;margin:0}
+    .subtitle{color:var(--muted);margin-top:6px;font-size:14px}
+    .date{font-size:13px;color:var(--muted)}
+
+    nav{background:#fff;display:flex;gap:8px;padding:12px 28px;border-bottom:1px solid #eee;flex-wrap:wrap}
+    nav a{color:var(--accent);text-decoration:none;padding:8px 12px;border-radius:6px;font-weight:600}
+    nav a.active{background:var(--accent);color:white}
+
+    /* Layout */
+    main{display:grid;grid-template-columns: 1fr 320px;gap:26px;padding:26px}
+    .lead{padding:18px;background:#fafafa;border-left:6px solid var(--accent)}
+    article{padding:18px}
+    h2{font-family:var(--serif);margin:6px 0 12px}
+    p.lead-text{font-size:16px;color:var(--muted);margin:0}
+
+    .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+    .card{background:white;padding:14px;border:1px solid #eee}
+    .card h3{margin:4px 0 10px;font-size:18px}
+    .meta{color:var(--muted);font-size:13px;margin-bottom:8px}
+
+    aside{padding:18px}
+    .widget{background:#fafafa;padding:12px;margin-bottom:12px;border:1px solid #f0f0f0}
+    .small{font-size:13px;color:var(--muted)}
+
+    footer{padding:20px 28px;border-top:1px solid #eee;background:#fff;color:var(--muted);font-size:13px}
+
+    /* Responsive */
+    @media(max-width:900px){
+      main{grid-template-columns:1fr;}
+      nav{justify-content:center}
+      .grid{grid-template-columns:1fr}
+    }
+
+    /* Estilo de bloque tipo "portada" */
+    .hero{display:flex;gap:18px;align-items:flex-start}
+    .hero .hero-img{flex:0 0 40%;min-height:150px;background:#ddd}
+    .hero .hero-body{flex:1}
+    .byline{font-size:13px;color:var(--muted);margin-bottom:10px}
+
+    /* utilidad para ocultar secciones cuando copies a páginas individuales */
+    .section-note{font-size:13px;color:var(--muted);background:#fff7e6;padding:10px;border-left:4px solid #ffd966;margin-bottom:12px}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="masthead">
+        <h1 class="title">LA VOZ PADUISTA</h1>
+        <div class="subtitle">Periódico digital - Colegio San Antonio de Padua · Ventaquemada, Boyacá</div>
+      </div>
+      <div class="date" id="today">17 de noviembre de 2025</div>
+    </header>
+
+    <nav id="main-nav">
+      <a href="#home" class="active" data-section="home">Portada</a>
+      <a href="#editorial" data-section="editorial">Editorial</a>
+      <a href="#noticias" data-section="noticias">Noticias</a>
+      <a href="#opinion" data-section="opinion">Opinión</a>
+      <a href="#cultura" data-section="cultura">Cultura</a>
+      <a href="#deportes" data-section="deportes">Deportes</a>
+      <a href="#tecnologia" data-section="tecnologia">Tecnología</a>
+      <a href="#creatividad" data-section="creatividad">Creatividad</a>
+      <a href="#datos" data-section="datos">Datos Curiosos</a>
+      <a href="#quienes" data-section="quienes">Quiénes somos</a>
+    </nav>
+
+    <main>
+      <section aria-labelledby="main-article">
+        <!-- Nota: si vas a usar esta plantilla como "una página por sección" elimina las otras secciones y deja solo la que necesitas. -->
+
+        <!-- PORTADA / HOME -->
+        <div id="home-section" class="home">
+          <div class="lead">
+            <h2>Edición: La Voz Paduista · Colegio San Antonio de Padua</h2>
+            <p class="lead-text">Bienvenidos a la edición digital. Destacamos la Feria Institucional de Ciencia y Cultura 2025 y más noticias de nuestra comunidad.</p>
+          </div>
+
+          <article>
+            <div class="hero">
+              <div class="hero-img" aria-hidden="true">&nbsp;</div>
+              <div class="hero-body">
+                <div class="byline">Por Redacción · Ventaquemada</div>
+                <h2>Éxito en la Feria Institucional de Ciencia y Cultura 2025</h2>
+                <p>El 8 de noviembre, el Colegio San Antonio de Padua realizó su Feria Institucional de Ciencia y Cultura. Estudiantes presentaron proyectos como turbinas ecológicas, narraciones de tradición boyacense y huertas orgánicas.</p>
+                <p><strong>Proyectos destacados:</strong> "Energía limpia con materiales caseros", "Relatos de nuestra tierra", "Huertas orgánicas escolares".</p>
+              </div>
+            </div>
+
+            <div style="height:18px"></div>
+
+            <div class="grid">
+              <div class="card">
+                <h3>Editorial</h3>
+                <div class="meta">Por Dirección</div>
+                <p>La educación como motor de cambio en Ventaquemada. En el Colegio San Antonio de Padua creemos que la educación es la herramienta más poderosa para transformar nuestra comunidad.</p>
+                <p><a href="#editorial" onclick="goTo('editorial')">Leer editorial →</a></p>
+              </div>
+
+              <div class="card">
+                <h3>Opinión</h3>
+                <div class="meta">Por Estudiantes</div>
+                <p>¿La tecnología ayuda o distrae en el aprendizaje? Un texto breve donde estudiantes comparten su experiencia con pantallas y estudio.</p>
+                <p><a href="#opinion" onclick="goTo('opinion')">Leer opinión →</a></p>
+              </div>
+
+              <div class="card">
+                <h3>Cultura</h3>
+                <div class="meta">Tradiciones de Boyacá</div>
+                <p>Las fiestas patronales, comidas típicas y el tejido artesanal son parte de nuestra identidad.</p>
+                <p><a href="#cultura" onclick="goTo('cultura')">Leer más →</a></p>
+              </div>
+
+              <div class="card">
+                <h3>Deportes</h3>
+                <div class="meta">Resultados recientes</div>
+                <p>La selección del colegio llegó a semifinales en el Torneo Municipal de Ventaquemada.</p>
+                <p><a href="#deportes" onclick="goTo('deportes')">Ver deportes →</a></p>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- EDITORIAL -->
+        <article id="editorial-section" style="display:none">
+          <div class="section-note">Esta es la página de <strong>Editorial</strong>. Si la vas a usar como página independiente en Blogger, elimina las demás secciones y pega solo este bloque.</div>
+          <h2>Editorial: La educación como motor de cambio en Ventaquemada</h2>
+          <p>En el Colegio San Antonio de Padua creemos firmemente que la educación es la herramienta más poderosa para transformar nuestra comunidad. Nuestro objetivo es formar estudiantes críticos, respetuosos y comprometidos.</p>
+          <p>Invitamos a la comunidad educativa a participar activamente en todas las iniciativas del colegio para que juntos construyamos un mejor futuro.</p>
+        </article>
+
+        <!-- NOTICIAS -->
+        <article id="noticias-section" style="display:none">
+          <div class="section-note">Página de <strong>Noticias</strong>. Ideal para entradas cronológicas.</div>
+          <h2>Noticias</h2>
+          <h3>Éxito en la Feria Institucional de Ciencia y Cultura 2025</h3>
+          <div class="meta">8 de noviembre de 2025 · Ventaquemada</div>
+          <p>El evento contó con proyectos escolares de ciencia, arte y tecnología. El rector destacó la creatividad y el compromiso de los estudiantes.</p>
+
+          <hr>
+
+          <h3>Próxima jornada de limpieza comunitaria</h3>
+          <div class="meta">20 de noviembre de 2025 · Ventaquemada</div>
+          <p>La jornada organizada por el área ambiental invita a estudiantes y familias a participar activamente.</p>
+        </article>
+
+        <!-- OPINIÓN -->
+        <article id="opinion-section" style="display:none">
+          <div class="section-note">Página de <strong>Opinión</strong>. Puedes publicar artículos de colaboradores.</div>
+          <h2>¿La tecnología mejora o distrae en el aprendizaje?</h2>
+          <div class="meta">Por: Estudiante colaborador</div>
+          <p>La tecnología es una herramienta potente pero requiere disciplina. Proponemos crear talleres de "higiene digital" en el colegio.</p>
+        </article>
+
+        <!-- CULTURA -->
+        <article id="cultura-section" style="display:none">
+          <div class="section-note">Página de <strong>Cultura</strong>.</div>
+          <h2>El encanto de las tradiciones de Boyacá</h2>
+          <p>Ventaquemada mantiene celebraciones como las fiestas patronales en honor a San Antonio de Padua, junto a tradiciones culinarias y artesanales.</p>
+        </article>
+
+        <!-- DEPORTES -->
+        <article id="deportes-section" style="display:none">
+          <div class="section-note">Página de <strong>Deportes</strong>.</div>
+          <h2>Torneo Municipal de Fútbol Escolar</h2>
+          <p>La selección juvenil alcanzó semifinales. Deportistas destacados: Daniel Ortiz, Juanita Beltrán y Santiago Cárdenas.</p>
+        </article>
+
+        <!-- TECNOLOGÍA -->
+        <article id="tecnologia-section" style="display:none">
+          <div class="section-note">Página de <strong>Tecnología</strong>.</div>
+          <h2>¿Qué es la Inteligencia Artificial?</h2>
+          <p>La IA ayuda a resumir textos, simular experimentos y mejorar el aprendizaje si se usa correctamente.</p>
+        </article>
+
+        <!-- CREATIVIDAD -->
+        <article id="creatividad-section" style="display:none">
+          <div class="section-note">Página de <strong>Creatividad</strong>.</div>
+          <h2>Poema: "Entre montañas y viento"</h2>
+          <p>Entre montañas despierta el día, donde el viento canta su melodía...</p>
+
+          <h3>Mini cuento: "El tesoro escondido"</h3>
+          <p>En la vereda Peña Arriba un joven encontró cartas antiguas que contenían consejos de vida.</p>
+        </article>
+
+        <!-- DATOS CURIOSOS -->
+        <article id="datos-section" style="display:none">
+          <div class="section-note">Página de <strong>Datos Curiosos</strong>.</div>
+          <h2>Datos curiosos</h2>
+          <ul>
+            <li>Una nube puede pesar más de 80 toneladas.</li>
+            <li>Las cabras tienen pupilas rectangulares.</li>
+            <li>Las hormigas no duermen.</li>
+          </ul>
+        </article>
+
+        <!-- QUIÉNES SOMOS -->
+        <article id="quienes-section" style="display:none">
+          <div class="section-note">Página de <strong>Quiénes somos</strong>.</div>
+          <h2>Quiénes somos</h2>
+          <p>La Voz Paduista es el periódico digital del Colegio San Antonio de Padua. Dirigido por la comunidad educativa con el objetivo de informar y fortalecer la identidad escolar.</p>
+        </article>
+
+      </section>
+
+      <aside>
+        <div class="widget">
+          <strong>Síguenos</strong>
+          <p class="small">Comparte las noticias del colegio en redes y con la familia.</p>
+        </div>
+
+        <div class="widget">
+          <strong>Últimas entradas</strong>
+          <ul class="small">
+            <li>Feria Institucional 2025</li>
+            <li>Torneo de Fútbol</li>
+            <li>Huertas Escolares</li>
+          </ul>
+        </div>
+
+        <div class="widget">
+          <strong>Contacto</strong>
+          <p class="small">Correo: direccion@sanantoniovq.edu.co</p>
+        </div>
+      </aside>
+    </main>
+
+    <footer>
+      © La Voz Paduista — Colegio San Antonio de Padua · Ventaquemada, Boyacá
+    </footer>
+  </div>
+
+  <script>
+    // Muestra la fecha actual (en formato español) en el header
+    (function(){
+      const d = new Date();
+      const months = ['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
+      const today = d.getDate() + ' de ' + months[d.getMonth()] + ' de ' + d.getFullYear();
+      document.getElementById('today').textContent = today;
+    })();
+
+    // Navegación simple para mostrar/ocultar secciones en un solo HTML
+    function goTo(section){
+      const sections = ['home','editorial','noticias','opinion','cultura','deportes','tecnologia','creatividad','datos','quienes'];
+      sections.forEach(s=>{
+        const el = document.getElementById(s + '-section');
+        if(!el) return;
+        el.style.display = (s===section) ? 'block' : 'none';
+      });
+      // marcar nav
+      document.querySelectorAll('#main-nav a').forEach(a=>{
+        a.classList.toggle('active', a.dataset.section===section);
+      });
+      // mover foco
+      window.scrollTo({top:0,behavior:'smooth'});
+    }
+
+    // Hacer que los enlaces del nav usen goTo
+    document.querySelectorAll('#main-nav a').forEach(a=>{
+      a.addEventListener('click', function(e){
+        e.preventDefault();
+        const sec = this.dataset.section;
+        goTo(sec);
+      });
+    });
+
+    // Si la URL contiene hash, abrir esa sección
+    (function(){
+      const hash = location.hash.replace('#','');
+      if(hash){
+        // si corresponde a una sección válida
+        const valid = ['home','editorial','noticias','opinion','cultura','deportes','tecnologia','creatividad','datos','quienes'];
+        if(valid.includes(hash)) goTo(hash);
+      }
+    })();
+  </script>
+</body>
+</html>
