@@ -1,304 +1,1023 @@
 <!doctype html>
 <html lang="es">
+
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>La Voz Paduista — Plantilla</title>
-  <style>
-    /* Reset ligero */
-    :root{
-      --accent:#0b5ed7; /* azul paduista */
-      --paper:#f6f5f3;
-      --text:#222;
-      --muted:#666;
-      --maxw:1100px;
-      --serif: 'Georgia', serif;
-      --sans: 'Arial', sans-serif;
-    }
-    *{box-sizing:border-box}
-    body{font-family:var(--sans);color:var(--text);background:var(--paper);line-height:1.45;margin:0;padding:24px}
-    .container{max-width:var(--maxw);margin:0 auto;background:white;box-shadow:0 6px 18px rgba(0,0,0,0.06);}
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>El Informativo Paduino — Plantilla</title>
+    <style>
+        /* Reset ligero */
+        :root {
+            --accent: #0b78d7;
+            /* azul paduista */
+            --paper: #f6f5f3;
+            --text: #222;
+            --muted: #666;
+            --maxw: 1100px;
+            --serif: 'Georgia', serif;
+            --sans: 'Arial', sans-serif;
+        }
 
-    /* Cabecera tipo periódico */
-    header{padding:26px 28px;border-bottom:4px solid var(--accent);display:flex;align-items:center;gap:18px}
-    .masthead{flex:1}
-    .title{font-family:var(--serif);font-size:34px;letter-spacing:1px;margin:0}
-    .subtitle{color:var(--muted);margin-top:6px;font-size:14px}
-    .date{font-size:13px;color:var(--muted)}
+        * {
+            box-sizing: border-box
+        }
 
-    nav{background:#fff;display:flex;gap:8px;padding:12px 28px;border-bottom:1px solid #eee;flex-wrap:wrap}
-    nav a{color:var(--accent);text-decoration:none;padding:8px 12px;border-radius:6px;font-weight:600}
-    nav a.active{background:var(--accent);color:white}
+        body {
+            font-family: var(--sans);
+            color: var(--text);
+            background: var(--paper);
+            line-height: 1.45;
+            margin: 0;
+            padding: 24px
+        }
 
-    /* Layout */
-    main{display:grid;grid-template-columns: 1fr 320px;gap:26px;padding:26px}
-    .lead{padding:18px;background:#fafafa;border-left:6px solid var(--accent)}
-    article{padding:18px}
-    h2{font-family:var(--serif);margin:6px 0 12px}
-    p.lead-text{font-size:16px;color:var(--muted);margin:0}
+        .container {
+            max-width: var(--maxw);
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+        }
 
-    .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
-    .card{background:white;padding:14px;border:1px solid #eee}
-    .card h3{margin:4px 0 10px;font-size:18px}
-    .meta{color:var(--muted);font-size:13px;margin-bottom:8px}
+        /* Cabecera tipo periódico */
+        header {
+            padding: 26px 28px;
+            border-bottom: 4px solid var(--accent);
+            display: flex;
+            align-items: center;
+            gap: 18px
+        }
 
-    aside{padding:18px}
-    .widget{background:#fafafa;padding:12px;margin-bottom:12px;border:1px solid #f0f0f0}
-    .small{font-size:13px;color:var(--muted)}
+        .masthead {
+            flex: 1
+        }
 
-    footer{padding:20px 28px;border-top:1px solid #eee;background:#fff;color:var(--muted);font-size:13px}
+        .title {
+            font-family: var(--serif);
+            font-size: 34px;
+            letter-spacing: 1px;
+            margin: 0
+        }
 
-    /* Responsive */
-    @media(max-width:900px){
-      main{grid-template-columns:1fr;}
-      nav{justify-content:center}
-      .grid{grid-template-columns:1fr}
-    }
+        .subtitle {
+            color: var(--muted);
+            margin-top: 6px;
+            font-size: 14px
+        }
 
-    /* Estilo de bloque tipo "portada" */
-    .hero{display:flex;gap:18px;align-items:flex-start}
-    .hero .hero-img{flex:0 0 40%;min-height:150px;background:#ddd}
-    .hero .hero-body{flex:1}
-    .byline{font-size:13px;color:var(--muted);margin-bottom:10px}
+        .date {
+            font-size: 13px;
+            color: var(--muted)
+        }
 
-    /* utilidad para ocultar secciones cuando copies a páginas individuales */
-    .section-note{font-size:13px;color:var(--muted);background:#fff7e6;padding:10px;border-left:4px solid #ffd966;margin-bottom:12px}
-  </style>
+        nav {
+            background: #fff;
+            display: flex;
+            gap: 8px;
+            padding: 12px 28px;
+            border-bottom: 1px solid #eee;
+            flex-wrap: wrap
+        }
+
+        nav a {
+            color: var(--accent);
+            text-decoration: none;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-weight: 600
+        }
+
+        nav a.active {
+            background: var(--accent);
+            color: white
+        }
+
+        /* Layout */
+        main {
+            display: grid;
+            grid-template-columns: 1fr 320px;
+            gap: 26px;
+            padding: 26px
+        }
+
+        .lead {
+            padding: 18px;
+            background: #fafafa;
+            border-left: 6px solid var(--accent)
+        }
+
+        article {
+            padding: 18px
+        }
+
+        h2 {
+            font-family: var(--serif);
+            margin: 6px 0 12px
+        }
+
+        p.lead-text {
+            font-size: 16px;
+            color: var(--muted);
+            margin: 0
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px
+        }
+
+        .card {
+            background: white;
+            padding: 14px;
+            border: 1px solid #eee
+        }
+
+        .card h3 {
+            margin: 4px 0 10px;
+            font-size: 18px
+        }
+
+        .meta {
+            color: var(--muted);
+            font-size: 13px;
+            margin-bottom: 8px
+        }
+
+        aside {
+            padding: 18px
+        }
+
+        .widget {
+            background: #fafafa;
+            padding: 12px;
+            margin-bottom: 12px;
+            border: 1px solid #f0f0f0
+        }
+
+        .small {
+            font-size: 13px;
+            color: var(--muted)
+        }
+
+        footer {
+            padding: 20px 28px;
+            border-top: 1px solid #eee;
+            background: #fff;
+            color: var(--muted);
+            font-size: 13px
+        }
+
+        /* Responsive */
+        @media(max-width:900px) {
+            main {
+                grid-template-columns: 1fr;
+            }
+
+            nav {
+                justify-content: center
+            }
+
+            .grid {
+                grid-template-columns: 1fr
+            }
+        }
+
+        /* Estilo de bloque tipo "portada" */
+        .hero {
+            display: flex;
+            gap: 18px;
+            align-items: flex-start
+        }
+
+        .hero .hero-img {
+            flex: 0 0 40%;
+            min-height: 150px;
+
+        }
+
+        .hero .hero-body {
+            flex: 1
+        }
+
+        .byline {
+            font-size: 13px;
+            color: var(--muted);
+            margin-bottom: 10px
+        }
+
+        /* utilidad para ocultar secciones cuando copies a páginas individuales */
+        .section-note {
+            font-size: 13px;
+            color: var(--muted);
+            background: #fff7e6;
+            padding: 10px;
+            border-left: 4px solid #ffd966;
+            margin-bottom: 12px
+        }
+
+        .editorial-section {
+            font-family: "Georgia", serif;
+            font-size: 18px;
+            line-height: 1.7;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: justify;
+            color: #222;
+
+        }
+
+        .editorial-titulo {
+            font-family: "Georgia", serif;
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 5px;
+            text-align: left;
+        }
+
+        .editorial-autor {
+            font-family: "Georgia", serif;
+            font-size: 18px;
+            font-style: italic;
+            margin: 0;
+            color: #333;
+        }
+
+        .editorial-cargo {
+            font-family: "Georgia", serif;
+            font-size: 16px;
+            margin-top: 2px;
+            color: #555;
+        }
+
+        /* --- Estilo de artículo periodístico --- */
+        .article-container {
+            max-width: 900px;
+            margin: 0 auto;
+            font-family: "Georgia", serif;
+        }
+
+
+        .article-meta {
+            font-size: 0.9rem;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 8px;
+            margin-bottom: 10px;
+        }
+
+        .article-lead {
+            font-size: 1.3rem;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+
+        .article-body {
+            columns: 2;
+            column-gap: 40px;
+        }
+
+        .article-body p {
+            margin-bottom: 1rem;
+            text-align: justify;
+        }
+
+        .article-subtitle {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-top: 20px;
+            break-inside: avoid;
+        }
+
+        .article-caption {
+            font-size: 0.85rem;
+            text-align: center;
+            margin-top: -10px;
+        }
+
+        /* NUEVOS ESTILOS PARA MEJORAS SOLICITADAS */
+        
+        /* Estilos para el aside más realista */
+        .widget {
+            background: #fafafa;
+            padding: 16px;
+            margin-bottom: 20px;
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        
+        .widget-title {
+            font-family: var(--serif);
+            font-size: 18px;
+            color: var(--accent);
+            margin-top: 0;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--accent);
+        }
+        
+        .widget-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .widget-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .widget-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .widget-list a {
+            color: var(--text);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .widget-list a:hover {
+            color: var(--accent);
+        }
+        
+        .widget-list a::before {
+            content: "»";
+            margin-right: 8px;
+            color: var(--accent);
+        }
+        
+        .calendar {
+            background: white;
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .calendar-header {
+            background: var(--accent);
+            color: white;
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+        }
+        
+        .calendar-body {
+            padding: 12px;
+        }
+        
+        .calendar-date {
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 8px;
+        }
+        
+        .calendar-event {
+            font-size: 13px;
+            padding: 6px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .calendar-event:last-child {
+            border-bottom: none;
+        }
+        
+        .event-time {
+            color: var(--accent);
+            font-weight: bold;
+            margin-right: 8px;
+        }
+        
+        /* Estilos para tarjetas de datos curiosos */
+        .curiosity-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .curiosity-card {
+            padding: 20px;
+            border: #0a6bc2 solid 4px;
+            border-radius: 8px;
+            position: relative;
+            box-shadow: 0 4px 12px rgba(11, 120, 215, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            font-family: "Georgia", serif;
+        }
+        
+        .curiosity-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(11, 120, 215, 0.4);
+        }
+        
+        .curiosity-card::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            right: -10px;
+            transform: translateY(-50%);
+            width: 0;
+            height: 0;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            border-left: 10px solid #0b78d7;
+        }
+        
+        .curiosity-card h3 {
+            margin-top: 0;
+            margin-bottom: 12px;
+            font-size: 18px;
+            border-bottom: 1px solid rgba(255,255,255,0.3);
+            padding-bottom: 8px;
+        }
+        
+        .curiosity-card p {
+            margin: 0;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        
+        .curiosity-number {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+    </style>
 </head>
+
 <body>
-  <div class="container">
-    <header>
-      <div class="masthead">
-        <h1 class="title">LA VOZ PADUISTA</h1>
-        <div class="subtitle">Periódico digital - Colegio San Antonio de Padua · Ventaquemada, Boyacá</div>
-      </div>
-      <div class="date" id="today">17 de noviembre de 2025</div>
-    </header>
-
-    <nav id="main-nav">
-      <a href="#home" class="active" data-section="home">Portada</a>
-      <a href="#editorial" data-section="editorial">Editorial</a>
-      <a href="#noticias" data-section="noticias">Noticias</a>
-      <a href="#opinion" data-section="opinion">Opinión</a>
-      <a href="#cultura" data-section="cultura">Cultura</a>
-      <a href="#deportes" data-section="deportes">Deportes</a>
-      <a href="#tecnologia" data-section="tecnologia">Tecnología</a>
-      <a href="#creatividad" data-section="creatividad">Creatividad</a>
-      <a href="#datos" data-section="datos">Datos Curiosos</a>
-      <a href="#quienes" data-section="quienes">Quiénes somos</a>
-    </nav>
-
-    <main>
-      <section aria-labelledby="main-article">
-        <!-- Nota: si vas a usar esta plantilla como "una página por sección" elimina las otras secciones y deja solo la que necesitas. -->
-
-        <!-- PORTADA / HOME -->
-        <div id="home-section" class="home">
-          <div class="lead">
-            <h2>Edición: La Voz Paduista · Colegio San Antonio de Padua</h2>
-            <p class="lead-text">Bienvenidos a la edición digital. Destacamos la Feria Institucional de Ciencia y Cultura 2025 y más noticias de nuestra comunidad.</p>
-          </div>
-
-          <article>
-            <div class="hero">
-              <div class="hero-img" aria-hidden="true">&nbsp;</div>
-              <div class="hero-body">
-                <div class="byline">Por Redacción · Ventaquemada</div>
-                <h2>Éxito en la Feria Institucional de Ciencia y Cultura 2025</h2>
-                <p>El 8 de noviembre, el Colegio San Antonio de Padua realizó su Feria Institucional de Ciencia y Cultura. Estudiantes presentaron proyectos como turbinas ecológicas, narraciones de tradición boyacense y huertas orgánicas.</p>
-                <p><strong>Proyectos destacados:</strong> "Energía limpia con materiales caseros", "Relatos de nuestra tierra", "Huertas orgánicas escolares".</p>
-              </div>
+    <div class="container">
+        <header>
+            <div class="masthead">
+                <h1 class="title">EL INFORMATIVO PADUINO</h1>
+                <div class="subtitle">Periódico digital - Colegio San Antonio de Padua · Ventaquemada, Boyacá</div>
             </div>
-
-            <div style="height:18px"></div>
-
-            <div class="grid">
-              <div class="card">
-                <h3>Editorial</h3>
-                <div class="meta">Por Dirección</div>
-                <p>La educación como motor de cambio en Ventaquemada. En el Colegio San Antonio de Padua creemos que la educación es la herramienta más poderosa para transformar nuestra comunidad.</p>
-                <p><a href="#editorial" onclick="goTo('editorial')">Leer editorial →</a></p>
-              </div>
-
-              <div class="card">
-                <h3>Opinión</h3>
-                <div class="meta">Por Estudiantes</div>
-                <p>¿La tecnología ayuda o distrae en el aprendizaje? Un texto breve donde estudiantes comparten su experiencia con pantallas y estudio.</p>
-                <p><a href="#opinion" onclick="goTo('opinion')">Leer opinión →</a></p>
-              </div>
-
-              <div class="card">
-                <h3>Cultura</h3>
-                <div class="meta">Tradiciones de Boyacá</div>
-                <p>Las fiestas patronales, comidas típicas y el tejido artesanal son parte de nuestra identidad.</p>
-                <p><a href="#cultura" onclick="goTo('cultura')">Leer más →</a></p>
-              </div>
-
-              <div class="card">
-                <h3>Deportes</h3>
-                <div class="meta">Resultados recientes</div>
-                <p>La selección del colegio llegó a semifinales en el Torneo Municipal de Ventaquemada.</p>
-                <p><a href="#deportes" onclick="goTo('deportes')">Ver deportes →</a></p>
-              </div>
+            <div>
+                <img src="img/logo.png" alt="Día del estudiante" style="width:50%;">
             </div>
-          </article>
-        </div>
+        </header>
 
-        <!-- EDITORIAL -->
-        <article id="editorial-section" style="display:none">
-          <h2>Editorial: Por: Rosibel Suárez Reyes
-Docente de lengua castellana
-</h2>
-          <p>Apreciada comunidad educativa de la Institución San Antonio de Padua:</p>
-          <p>Se inicia una nueva forma de dar a conocer la expresión y la participación a través de la palabra escrita. Con gran satisfacción se presenta la primera edición digital del Periódico Escolar Informativo Paduino, una idea que nace del deseo de compartir nuestras voces, nuestras ideas y los acontecimientos que dan vida a nuestra Institución.</p>
-          <p>Este periódico no solo es un medio informativo: es un espacio donde la palabra se transforma en puente, donde cada integrante de la comunidad educativa puede construir, crear y plasmar sus ideas. Es la oportunidad de descubrir talentos, de fortalecer la lectura y la escritura, y de exponer cada idea a través de la imaginación, la autenticidad y los acontecimientos propios de una comunidad educativa. </p>       
-           <p>No solo es el lanzamiento de un medio escolar, sino el nacimiento de una comunidad que escribe su propia historia. Cada artículo, cada fotografía, cada opinión y cada noticia será un reflejo de quienes somos: una institución comprometida con la formación integral, con la creatividad y con la búsqueda constante del aprendizaje.</p>    
-           <p>Invitamos a toda la comunidad a abrir este periódico con curiosidad y orgullo. Que cada página nos anime a pensar, a cuestionar, a soñar y a reconocer que la educación también se construye con palabras que inspiran y que nos unen.</p>    
-           <p>A nuestros estudiantes redactores, fotógrafos, ilustradores y colaboradores: gracias por asumir este reto con entusiasmo y responsabilidad. A los docentes que acompañan este proceso, gracias por creer en el poder de la expresión. A las familias, gracias por motivar y apoyar cada iniciativa.</p>    
-           <p>El <strong>Informativo Paduino</strong> comienza un camino, y cada uno de nosotros será parte esencial de su crecimiento. Que esta primera edición sea el inicio de muchas más. Que las letras nos sigan guiando, que las ideas nos sigan moviendo y que este periódico se convierta en un símbolo del espíritu: solidario, creativo, crítico y lleno de esperanza.</p>    
-           <p>¡Sean todos bienvenidos a este nuevo capítulo!
-¡Aquí empieza la historia escrita por nosotros y para nosotros!
-</p>    
-        </article>
+        <nav id="main-nav">
+            <a href="#home" class="active" data-section="home">Portada</a>
+            <a href="#editorial" data-section="editorial">Editorial</a>
+            <a href="#noticias" data-section="noticias">Noticias</a>
+            <a href="#opinion" data-section="opinion">Opinión</a>
+            <a href="#cultura" data-section="cultura">Cultura</a>
+            <a href="#deportes" data-section="deportes">Deportes</a>
+            <a href="#tecnologia" data-section="tecnologia">Tecnología</a>
+            <a href="#creatividad" data-section="creatividad">Creatividad</a>
+            <a href="#datos" data-section="datos">Datos Curiosos</a>
+        </nav>
 
-        <!-- NOTICIAS -->
-        <article id="noticias-section" style="display:none">
-          <div class="section-note">Página de <strong>Noticias</strong>. Ideal para entradas cronológicas.</div>
-          <h2>Noticias</h2>
-          <h3>Éxito en la Feria Institucional de Ciencia y Cultura 2025</h3>
-          <div class="meta">8 de noviembre de 2025 · Ventaquemada</div>
-          <p>El evento contó con proyectos escolares de ciencia, arte y tecnología. El rector destacó la creatividad y el compromiso de los estudiantes.</p>
+        <main>
+            <section aria-labelledby="main-article">
+                <!-- Nota: si vas a usar esta plantilla como "una página por sección" elimina las otras secciones y deja solo la que necesitas. -->
 
-          <hr>
+                <!-- PORTADA / HOME -->
+                <div id="home-section" class="home">
+                    <div class="lead">
+                        <h2>Edición: El Informativo Paduino · Colegio San Antonio de Padua</h2>
+                        <p class="lead-text">Bienvenidos a la edición digital. Destacamos el día de la Boyacensidad
+                            y más noticias de nuestra comunidad.</p>
+                    </div>
 
-          <h3>Próxima jornada de limpieza comunitaria</h3>
-          <div class="meta">20 de noviembre de 2025 · Ventaquemada</div>
-          <p>La jornada organizada por el área ambiental invita a estudiantes y familias a participar activamente.</p>
-        </article>
+                    <article>
+                        <div class="hero">
+                            <div class="hero-img" aria-hidden="true"><img src="img/logo.png" alt="Día del estudiante" style="width:100%;"></div>
+                            <div class="hero-body">
+                                <div class="byline">Por Redacción · Ventaquemada</div>
+                                <h2>Una edición que celebra nuestras voces y nuestra identidad</h2>
+                                <p>El Informativo Paduino presenta una nueva edición digital construida desde la creatividad, la participación y el sentido de pertenencia. En estas páginas encontrarán los proyectos que reflejan el talento de nuestros estudiantes, los eventos que fortalecen nuestra identidad boyacense y las iniciativas que hacen grande a nuestra comunidad educativa.</p>    
+                            </div>
+                        </div>
 
-        <!-- OPINIÓN -->
-        <article id="opinion-section" style="display:none">
-          <div class="section-note">Página de <strong>Opinión</strong>. Puedes publicar artículos de colaboradores.</div>
-          <h2>¿La tecnología mejora o distrae en el aprendizaje?</h2>
-          <div class="meta">Por: Estudiante colaborador</div>
-          <p>La tecnología es una herramienta potente pero requiere disciplina. Proponemos crear talleres de "higiene digital" en el colegio.</p>
-        </article>
+                        <div style="height:18px"></div>
 
-        <!-- CULTURA -->
-        <article id="cultura-section" style="display:none">
-          <div class="section-note">Página de <strong>Cultura</strong>.</div>
-          <h2>El encanto de las tradiciones de Boyacá</h2>
-          <p>Ventaquemada mantiene celebraciones como las fiestas patronales en honor a San Antonio de Padua, junto a tradiciones culinarias y artesanales.</p>
-        </article>
+                        <div class="grid">
+                            <div class="card">
+                                <h3>Editorial</h3>
+                                <div class="meta">Por: Rosibel Suárez Reyes
+                                    Docente de lengua castellana
+                                </div>
+                                <p>Apreciada comunidad educativa de la Institución San Antonio de Padua se inicia una
+                                    nueva forma de dar a conocer la expresión y la participación a través de la palabra
+                                    escrita...</p>
+                                <p><a href="#editorial" onclick="goTo('editorial')">Leer editorial →</a></p>
+                            </div>
 
-        <!-- DEPORTES -->
-        <article id="deportes-section" style="display:none">
-          <div class="section-note">Página de <strong>Deportes</strong>.</div>
-          <h2>Torneo Municipal de Fútbol Escolar</h2>
-          <p>La selección juvenil alcanzó semifinales. Deportistas destacados: Daniel Ortiz, Juanita Beltrán y Santiago Cárdenas.</p>
-        </article>
+                            <div class="card">
+                                <h3>Opinión</h3>
+                                <div class="meta">Por: Alfonso Fonseca
+                                    Docente de Sociales
+                                </div>
+                                <p>Durante esta jornada, realizada el 20 de febrero, se eligieron las estudiantes de
+                                    grado
+                                    once para los cargos de personera y contralora. Las alumnas</p>
+                                <p><a href="#opinion" onclick="goTo('opinion')">Leer opinión →</a></p>
+                            </div>
 
-        <!-- TECNOLOGÍA -->
-        <article id="tecnologia-section" style="display:none">
-          <div class="section-note">Página de <strong>Tecnología</strong>.</div>
-          <h2>¿Qué es la Inteligencia Artificial?</h2>
-          <p>La IA ayuda a resumir textos, simular experimentos y mejorar el aprendizaje si se usa correctamente.</p>
-        </article>
+                            <div class="card">
+                                <h3>Cultura</h3>
+                                <div class="meta">Por estudiantes.</div>
+                                <p>La creación artística como expresión de lenguaje. La asignatura de Lengua Castellana,
+                                    más allá de enfocarse únicamente en la gramática, la ortografía y la comprensión
+                                    lectora, también busca fortalecer la capacidad de los estudiantes</p>
+                                <p><a href="#cultura" onclick="goTo('cultura')">Leer más →</a></p>
+                            </div>
 
-        <!-- CREATIVIDAD -->
-        <article id="creatividad-section" style="display:none">
-          <div class="section-note">Página de <strong>Creatividad</strong>.</div>
-          <h2>Poema: "Entre montañas y viento"</h2>
-          <p>Entre montañas despierta el día, donde el viento canta su melodía...</p>
+                            <div class="card">
+                                <h3>Deportes</h3>
+                                <div class="meta">Por: Carlos Hernández
+                                    Docente de Educación física.
+                                </div>
+                                <p>Informe sobre el Campeonato de Voleibol: El presente informe tiene como objetivo dar
+                                    a conocer el desarrollo del campeonato de voleibol en la Institución San Antonio de
+                                    Padua .
+                                </p>
+                                <p><a href="#deportes" onclick="goTo('deportes')">Ver deportes →</a></p>
+                            </div>
+                        </div>
+                    </article>
+                </div>
 
-          <h3>Mini cuento: "El tesoro escondido"</h3>
-          <p>En la vereda Peña Arriba un joven encontró cartas antiguas que contenían consejos de vida.</p>
-        </article>
+                <!-- EDITORIAL -->
+                <article id="editorial-section" style="display:none">
+                    <h2 class="editorial-titulo">Editorial</h2>
+                    <p class="editorial-autor">Por: Rosibel Suárez Reyes</p>
+                    <p class="editorial-cargo">Docente de lengua castellana</p>
+                    <p>Apreciada comunidad educativa de la Institución San Antonio de Padua:</p>
+                    <p>Se inicia una nueva forma de dar a conocer la expresión y la participación a través de la palabra
+                        escrita. Con gran satisfacción se presenta la primera edición digital del Periódico Escolar
+                        Informativo Paduino, una idea que nace del deseo de compartir nuestras voces, nuestras ideas y
+                        los acontecimientos que dan vida a nuestra Institución.</p>
+                    <p>Este periódico no solo es un medio informativo: es un espacio donde la palabra se transforma en
+                        puente, donde cada integrante de la comunidad educativa puede construir, crear y plasmar sus
+                        ideas. Es la oportunidad de descubrir talentos, de fortalecer la lectura y la escritura, y de
+                        exponer cada idea a través de la imaginación, la autenticidad y los acontecimientos propios de
+                        una comunidad educativa. </p>
+                    <p>No solo es el lanzamiento de un medio escolar, sino el nacimiento de una comunidad que escribe su
+                        propia historia. Cada artículo, cada fotografía, cada opinión y cada noticia será un reflejo de
+                        quienes somos: una institución comprometida con la formación integral, con la creatividad y con
+                        la búsqueda constante del aprendizaje.</p>
+                    <p>Invitamos a toda la comunidad a abrir este periódico con curiosidad y orgullo. Que cada página
+                        nos anime a pensar, a cuestionar, a soñar y a reconocer que la educación también se construye
+                        con palabras que inspiran y que nos unen.</p>
+                    <p>A nuestros estudiantes redactores, fotógrafos, ilustradores y colaboradores: gracias por asumir
+                        este reto con entusiasmo y responsabilidad. A los docentes que acompañan este proceso, gracias
+                        por creer en el poder de la expresión. A las familias, gracias por motivar y apoyar cada
+                        iniciativa.</p>
+                    <p>El <strong>Informativo Paduino</strong> comienza un camino, y cada uno de nosotros será parte
+                        esencial de su crecimiento. Que esta primera edición sea el inicio de muchas más. Que las letras
+                        nos sigan guiando, que las ideas nos sigan moviendo y que este periódico se convierta en un
+                        símbolo del espíritu: solidario, creativo, crítico y lleno de esperanza.</p>
+                    <p>¡Sean todos bienvenidos a este nuevo capítulo!
+                        ¡Aquí empieza la historia escrita por nosotros y para nosotros!
+                    </p>
+                </article>
 
-        <!-- DATOS CURIOSOS -->
-        <article id="datos-section" style="display:none">
-          <div class="section-note">Página de <strong>Datos Curiosos</strong>.</div>
-          <h2>Datos curiosos</h2>
-          <ul>
-            <li>Una nube puede pesar más de 80 toneladas.</li>
-            <li>Las cabras tienen pupilas rectangulares.</li>
-            <li>Las hormigas no duermen.</li>
-          </ul>
-        </article>
+                <!-- NOTICIAS -->
+                <article id="noticias-section" style="display:none">
+
+                    <h2>Noticias</h2>
+
+                    <!-- NOTICIA 1 -->
+                    <div style="display:flex; align-items:center; gap:20px; margin-bottom:40px; flex-wrap:wrap;">
+
+                        <!-- Imagen izquierda -->
+                        <div style="flex:1; min-width:250px;">
+                            <img src="img/parque.jpg" alt="Entrega parque infantil"
+                                style="width:100%; border:2px solid #ccc; border-radius:4px;">
+                        </div>
+
+                        <!-- Texto -->
+                        <div style="flex:2; min-width:280px;">
+                            <h3>Entrega del parque infantil</h3>
+                            <div class="meta">Junio de 2025 · Ventaquemada</div>
+                            <p>
+                                Este año se celebra con gratitud la entrega del parque infantil, un espacio necesario
+                                para el esparcimiento de los niños y niñas más pequeños. Se resalta la gestión del
+                                señor rector Hugo Armando Granados, gracias por ello.
+                            </p>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <!-- NOTICIA 2 -->
+                    <div style="display:flex; align-items:center; gap:20px; margin-top:40px; flex-wrap:wrap;">
+
+                        <!-- Texto -->
+                        <div style="flex:2; min-width:280px;">
+                            <h3>Día del estudiante</h3>
+                            <div class="meta">Junio de 2025 · Ventaquemada</div>
+                            <p>
+                                Se llevo a acabo el día del estudiante donde se unieron todas las sedes de nuestra
+                                Institución, fue un evento de compartir, de risas, competencias y sobre todo de alegría
+                                para cada estudiante que disfrutaron este momento.
+                            </p>
+                        </div>
+
+                        <!-- Imagen derecha -->
+                        <div style="flex:1; min-width:250px;">
+                            <img src="img/estudiantes.jpg" alt="Día del estudiante"
+                                style="width:100%; border:2px solid #ccc; border-radius:4px;">
+                        </div>
+
+                    </div>
+
+                </article>
+
+                <!-- OPINIÓN -->
+                <article id="opinion-section" style="display:none">
+                    <h2>Síntesis Jornada Democrática</h2>
+                    <p class="editorial-autor">Por: Alfonso Fonseca</p>
+                    <p class="editorial-cargo">Docente de Sociales</p>
+
+                    <!-- Imagen 1 -->
+                    <figure style="text-align:center;">
+                        <img src="img/jornada-democratica-1.jpg" alt="Encuentro de Personeros"
+                            style="width:100%; border-radius:4px; border:2px solid #ddd;">
+                        <figcaption style="font-size:14px; margin-top:8px; color:#555;">
+                            Encuentro Municipal de Personeros y Contralores Estudiantiles.
+                        </figcaption>
+                    </figure>
+
+                    <!-- Texto 1 -->
+                    <p style="text-align:justify;">
+                        Durante esta jornada, realizada el 20 de febrero, se eligieron las estudiantes de grado
+                        once para los cargos de personera y contralora. Las alumnas <strong>Kasandra Pérez</strong> y
+                        <strong>Alexandra Pedraza</strong> fueron elegidas respectivamente.
+                    </p>
+
+                    <p style="text-align:justify;">
+                        La actividad fue apoyada por los estudiantes de grado décimo, quienes sirvieron como
+                        jurados demostrando responsabilidad y compromiso. Se observó honestidad en las
+                        candidatas y transparencia en el proceso electoral.
+                    </p>
+
+                    <p style="text-align:justify;">
+                        En el desarrollo de sus planes de trabajo se evidenció la responsabilidad en la ejecución
+                        de actividades como el Día del Idioma, campañas de ecología, Día del Docente, Amor y
+                        Amistad, Día del Niño y su participación en los Centros Juveniles promovidos por la
+                        Alcaldía y la Personería Municipal. Se destaca su esfuerzo y dedicación.
+                    </p>
+                    <figure style="text-align:center;">
+                        <img src="img/jornada-democratica-2.png" alt="Encuentro de Personeros"
+                            style="width:100%; border-radius:4px; border:2px solid #ddd;">
+                        <figcaption style="font-size:14px; margin-top:8px; color:#555;">
+                            Encuentro Municipal de Personeros y Contralores Estudiantiles.
+                        </figcaption>
+                    </figure>
 
 
-      </section>
+                    <hr style="margin:40px 0;">
 
-      <aside>
-        <div class="widget">
-          <strong>Síguenos</strong>
-          <p class="small">Comparte las noticias del colegio en redes y con la familia.</p>
-        </div>
 
-        <div class="widget">
-          <strong>Últimas entradas</strong>
-          <ul class="small">
-            <li>Feria Institucional 2025</li>
-            <li>Torneo de Fútbol</li>
-            <li>Huertas Escolares</li>
-          </ul>
-        </div>
+                    <!-- SEGUNDO SUBARTÍCULO -->
 
-        <div class="widget">
-          <strong>Contacto</strong>
-          <p class="small">Correo: direccion@sanantoniovq.edu.co</p>
-        </div>
-      </aside>
-    </main>
+                    <h2>Síntesis del Encuentro de Personeros y Contralores</h2>
 
-    <footer>
-      © La Voz Paduista — Colegio San Antonio de Padua · Ventaquemada, Boyacá
-    </footer>
-  </div>
+                    <!-- Imagen 2 -->
+                    <figure style="text-align:center;">
+                        <img src="img/encuentro-personeros.jpg" alt="Encuentro de Personeros" style="width:100%;">
+                        <figcaption style="font-size:14px; margin-top:8px; color:#555;">
+                            Encuentro Municipal de Personeros y Contralores Estudiantiles.
+                        </figcaption>
+                    </figure>
 
-  <script>
-    // Muestra la fecha actual (en formato español) en el header
-    (function(){
-      const d = new Date();
-      const months = ['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
-      const today = d.getDate() + ' de ' + months[d.getMonth()] + ' de ' + d.getFullYear();
-      document.getElementById('today').textContent = today;
-    })();
+                    <!-- Texto 2 -->
+                    <p style="text-align:justify;">
+                        Este evento se llevó a cabo el 11 de septiembre con la participación de varias Instituciones
+                        Educativas del municipio de Ventaquemada: Francisco de Paula, Colegio Panamericano,
+                        Puente de Piedra, Manuel Antonio Flores y la Institución San Antonio de Padua.
+                    </p>
 
-    // Navegación simple para mostrar/ocultar secciones en un solo HTML
-    function goTo(section){
-      const sections = ['home','editorial','noticias','opinion','cultura','deportes','tecnologia','creatividad','datos','quienes'];
-      sections.forEach(s=>{
-        const el = document.getElementById(s + '-section');
-        if(!el) return;
-        el.style.display = (s===section) ? 'block' : 'none';
-      });
-      // marcar nav
-      document.querySelectorAll('#main-nav a').forEach(a=>{
-        a.classList.toggle('active', a.dataset.section===section);
-      });
-      // mover foco
-      window.scrollTo({top:0,behavior:'smooth'});
-    }
+                    <p style="text-align:justify;">
+                        Contó con la presencia del personero municipal Edison Romero, el contralor departamental,
+                        la doctora Yamile Muñoz, representantes de juventudes, directivos, docentes y estudiantes
+                        de grados décimo y once.
+                    </p>
+                    <figure style="text-align:center;">
+                        <img src="img/encuentro-personeros-2.jpg" alt="Encuentro de Personeros"
+                            style="width:100%; border-radius:4px; border:2px solid #ddd;">
+                        <figcaption style="font-size:14px; margin-top:8px; color:#555;">
+                            Encuentro Municipal de Personeros y Contralores Estudiantiles.
+                        </figcaption>
+                    </figure>
 
-    // Hacer que los enlaces del nav usen goTo
-    document.querySelectorAll('#main-nav a').forEach(a=>{
-      a.addEventListener('click', function(e){
-        e.preventDefault();
-        const sec = this.dataset.section;
-        goTo(sec);
-      });
-    });
+                    <p style="text-align:justify;">
+                        Se trabajaron temas relacionados con liderazgo estudiantil, mecanismos de participación,
+                        derechos y deberes, convivencia, manual de convivencia y problemáticas actuales de las
+                        instituciones educativas. Posteriormente se desarrolló una plenaria con los personeros y
+                        contralores estudiantiles.
+                    </p>
 
-    // Si la URL contiene hash, abrir esa sección
-    (function(){
-      const hash = location.hash.replace('#','');
-      if(hash){
-        // si corresponde a una sección válida
-        const valid = ['home','editorial','noticias','opinion','cultura','deportes','tecnologia','creatividad','datos','quienes'];
-        if(valid.includes(hash)) goTo(hash);
-      }
-    })();
-  </script>
+
+                    <hr style="margin:40px 0;">
+
+
+                    <!-- TERCER SUBARTÍCULO -->
+
+                    <h2>Síntesis Día de la Boyacensidad</h2>
+
+                    <!-- Imagen 3 -->
+                    <figure style="text-align:center; margin:20px 0;">
+                        <img src="img/boyacensidad.jpg" alt="Día de la Boyacensidad"
+                            style="max-width:80%; border-radius:4px; border:2px solid #ddd;">
+                        <figcaption style="font-size:14px; margin-top:8px; color:#555;">
+                            Celebración del Día de la Boyacensidad.
+                        </figcaption>
+                    </figure>
+
+                    <!-- Texto 3 -->
+                    <p style="text-align:justify;">
+                        El 2 de octubre se celebró el Día de la Boyacensidad, resaltando los valores culturales y
+                        artísticos de nuestro departamento: danza, gastronomía, geografía e historia.
+                    </p>
+
+                    <p style="text-align:justify;">
+                        Hubo una masiva participación de estudiantes desde jardín hasta grado once. La jornada
+                        inició con una izada de bandera, exaltando a los estudiantes destacados por su valor de
+                        identidad.
+                    </p>
+
+                    <p style="text-align:justify;">
+                        Se realizó también un acto cultural y una integración de los grados once. Se destacó el
+                        compromiso de los estudiantes, apoyados por sus directores de grado. La actividad fue
+                        coordinada por los docentes <strong>Jhonana Forero</strong> y <strong>Alfonso Fonseca</strong>.
+                    </p>
+                </article>
+
+
+                <!-- CULTURA -->
+                <article id="cultura-section" style="display:none">
+
+                    <div class="article-container">
+                        <h1>La creación artística como lenguaje: estudiantes de noveno presentan pinturas inspiradas en
+                            la lectura</h1>
+                        <div class="article-meta">
+                            Cultura | Edición 2024 – 2025
+                        </div>
+
+                        <div class="article-body">
+
+                            <p>La asignatura de Lengua Castellana, más allá de enfocarse únicamente en la gramática, la
+                                ortografía y la comprensión lectora, también busca fortalecer la capacidad de los
+                                estudiantes para interpretar, expresar y comunicar ideas de manera creativa. Bajo esta
+                                perspectiva, los estudiantes de grado noveno de 2024 y 2025 han desarrollad elaboración
+                                de pinturas que integró la sensibilidad artística con los procesos de lectura y
+                                escritura. El propósito central de esta actividad fue demostrar que el lenguaje no se
+                                limita solo a la palabra escrita o hablada, sino que también puede manifestarse por
+                                medio de imágenes, símbolos y colores. Cada pintura elaborada por los estudiantes se
+                                convirtió en un texto visual cargado de significados, emociones y reflexiones
+                                personales. </p>
+                            <p>Durante el proceso, se fomentó la interpretación crítica. Los estudiantes debían
+                                identificar las ideas principales de los textos seleccionados, reconocer las emociones
+                                predominantes y comprender el mensaje implícito de su propia inspiración.
+                                Posteriormente, transformaron esa interpretación en una pintura que representara
+                                visualmente su lectura. Este ejercicio permitió fortalecer la competencia comunicativa,
+                                pues los estudiantes aprendieron a traducir palabras en imágenes, a argumentar sus
+                                decisiones creativas y a explicar la relación entre la pintura y el texto literario.</p>
+                            <p>La actividad también promovió el trabajo autónomo y la responsabilidad. Los estudiantes
+                                eligieron sus materiales, bocetaron sus ideas y experimentaron con técnicas como el
+                                acrílico, la témpera o el collage. Al finalizar sus obras, cada uno elaboró la
+                                descripción donde explicaba el mensaje de la pintura, justificaba los colores utilizados
+                                y detallaba la intención comunicativa detrás de cada elemento visual.</p>
+                            <p>Además, el proyecto favoreció el desarrollo de la sensibilidad artística, una habilidad
+                                fundamental en la formación integral del estudiante. Las pinturas evidenciaron
+                                diversidad de estilos: algunos optaron por representar paisajes que reflejaban calma y
+                                esperanza, mientras que otros plasmaron figuras humanas que expresaban emociones como la
+                                tristeza, la alegría o la sorpresa. Hubo también quienes se inclinaron por composiciones
+                                abstractas, donde los colores y las formas hablaban por sí mismas. Finalmente, permitió
+                                que los estudiantes reconocieran el arte como una forma legítima de comunicación. En la
+                                exposición final, cada pintura fue acompañada por la explicación oral de su autor, lo
+                                que fortaleció la competencia argumentativa. Este espacio de socialización no solo les
+                                permitió compartir sus ideas, sino también valorar el talento y la interpretación de sus
+                                compañeros. En conclusión, la elaboración de pinturas en la asignatura se convirtió en
+                                una oportunidad para integrar la lectura, la escritura y la expresión artística. </p>
+
+                        </div>
+
+                    </div>
+                </article>
+
+
+                <!-- DEPORTES -->
+                <article id="deportes-section" style="display:none">
+                    <h2>Campeonato de Voleibol</h2>
+                    <p class="editorial-autor">Por: Carlos Hernández</p>
+                    <p class="editorial-cargo">Docente de Educación física.</p>
+                    <!-- Contenido del artículo -->
+                    <p style="text-align:justify;">
+                        <strong>Informe sobre el Campeonato de Voleibol:</strong> El presente informe tiene como
+                        objetivo dar a conocer el desarrollo del campeonato de voleibol en la Institución San
+                        Antonio de Padua, realizado durante finales del tercer e inicios del cuarto período.
+                    </p>
+                    <p style="text-align:justify;">
+                        Se contó con la asesoría del profesor Carlos Hernández, docente de Educación Física, y la
+                        organización logística por parte de estudiantes de los grados 9, 10 y 11, quienes
+                        colaboraron en aspectos como arbitraje, manejo de atril, balón y mallas. Este evento
+                        deportivo buscó fomentar la integración, el trabajo en equipo y la práctica del deporte
+                        entre estudiantes y algunos directivos.
+                    </p>
+                    <!-- Imagen estilo periodístico -->
+                    <figure style="text-align:center; margin:0 0;">
+                        <img src="img/voleibol.jpg" alt="Campeonato de voleibol"
+                            style="width:100%; border-radius:4px; border:2px solid #ddd;">
+                        <figcaption style="font-size:14px; margin-top:8px; color:#555;">
+                            Campeonato institucional de voleibol — Cancha central.
+                        </figcaption>
+                    </figure>
+
+                    <p style="text-align:justify;">
+                        El campeonato contó con la participación de <strong>10 equipos</strong>, conformados por ocho
+                        integrantes cada uno. Se dividió en dos categorías: <strong>Juvenil</strong> (grados 9, 10, 11 y
+                        docentes) y
+                        <strong>Prejuvenil</strong> (grados 6, 7 y 8). Los partidos se realizaron en la cancha central
+                        de la
+                        institución bajo la organización de <strong>Yeimy Alexandra Pedraza</strong>, contralora
+                        estudiantil, y
+                        <strong>Paula Alejandra Bustos</strong> de grado 11.
+                    </p>
+
+                    <p style="text-align:justify;">
+                        El equipo campeón en la categoría Juvenil fue <strong>Spartans</strong>, mientras que en la
+                        categoría
+                        Prejuvenil el título fue para <strong>El Tapazo</strong>. También se entregaron reconocimientos
+                        individuales a los jugadores destacados de ambos equipos, valorando su esfuerzo,
+                        colaboración y desempeño dentro de la cancha.
+                    </p>
+
+                </article>
+
+                <!-- TECNOLOGÍA -->
+                <article id="tecnologia-section" style="display:none">
+                    <h2>Uso de Tablets en los Procesos de Lectura</h2>
+
+                    <!-- Imagen arriba estilo periodístico -->
+                    <figure style="text-align:center; margin:20px 0;">
+                        <img src="img/tablets.jpg" alt="Uso de tablets"
+                            style="max-width:80%; border-radius:4px; border:2px solid #ddd;">
+                        <figcaption style="font-size:14px; margin-top:8px; color:#555;">
+                            Estudiantes de grado décimo durante las actividades de lectura con tablets.
+                        </figcaption>
+                    </figure>
+
+                    <!-- Texto -->
+                    <p style="text-align:justify;">
+                        Las tablets se han convertido en un recurso para fortalecer los procesos de lectura
+                        en grado décimo. A través de ellas, los estudiantes pueden acceder a libros digitales,
+                        artículos, enciclopedias y recursos interactivos que enriquecen su comprensión.
+                    </p>
+
+                    <p style="text-align:justify;">
+                        Además, permiten ampliar el vocabulario, investigar con mayor facilidad y desarrollar
+                        habilidades tecnológicas esenciales. Su uso responsable favorece una lectura más dinámica,
+                        motivadora y acorde con las necesidades educativas actuales.
+                    </p>
+
+                    <p style="text-align:justify;">
+                        Esta iniciativa parte de que la Institución cuenta con más de 50 tablets para que los
+                        estudiantes exploren y experimenten. Finalmente, se analiza si esta herramienta es viable
+                        para continuar implementándola en los años venideros en otros grados.
+                    </p>
+                </article>
+
+                <!-- CREATIVIDAD -->
+                <article id="creatividad-section" style="display:none">
+                    <h2>EL ANIME MÁS QUE DIBUJOS</h2>
+                    <p class="editorial-autor">Por: Oscar Bernal</p>
+                    <p class="editorial-cargo">Estudiante grado 8°</p>
+                    <p>Aunque muchos aún creen que el anime es ''solo para niños", millones de personas en todo el mundo
+                        saben que es mucho más; es una forma de arte que transmite emociones profundas y habla de temas
+                        complejos como el amor, la perdida, la superación y el sentido de la vida.</p>
+                    <p>Series como Naruto, Attac on Titan o Your name, han marcado a generaciones, en cada historia hay
+                        un mensaje, un personaje con el que uno puede identificarse. Muchos jóvenes encuentran refugio
+                        en esos mundos, donde los protagonistas también sufren, luchan y crecen. El anime no solo se ve,
+                        se vive. Crea comunidades, inspira arte, enseña valores y conecta a personas de distintas
+                        culturas. Ya no es raro, ver a alguien con una mochila de Demon Slayer o escuchando un opening
+                        japones en sus audífonos. El anime ha dejado de ser "raro" para convertirse en parte de la
+                        identidad de esta generación.</p>
+                    <p>Muchos animes también enseñan lecciones de vida. A través de sus personajes, aprendemos a nunca
+                        rendirnos, a valorar la amistad y a seguir adelante a pesar de la dificultad. Por eso, el anime
+                        no solo entretiene si no que inspira.</p>
+                </article>
+
+                <!-- DATOS CURIOSOS -->
+
+                <article id="datos-section" style="display:none">
+                    <h2>Datos Curiosos</h2>
+                    
+                    <div class="curiosity-cards">
+                        <div class="curiosity-card" style="height:55%;">
+                            <div>
+                                <div class="curiosity-icon">🎓</div>
+                                <h3>Despedida Grado Décimo</h3>
+                                <p>Como tradición en esta ocasión, se llevó a cabo con una revista rítmica en homenaje a sus compañeros de grado undécimo por parte de grado décimo.</p>
+                            </div>
+                            <div class="curiosity-highlight">¡Espectacular! </div>
+                            <img src="img/despedida.png" alt="Día del estudiante"
+                                style="width:100%; margin-top: 10px;">
+                        </div>
+                        
+                        <div class="curiosity-card">
+                            <div>
+                                <div class="curiosity-icon">📚</div>
+                                <h3>Participación Día del Idioma</h3>
+                                <p>Algunos estudiantes participaron en la convocatoria de la alcaldía municipal a este evento, ganadores en deletreo y oralidad recibieron premios económicos.</p>
+                            </div>
+                            <div class="curiosity-highlight">¡Felicitaciones a todos los participantes!</div>
+                             <img src="img/dia-idioma.png" alt="Día del estudiante"
+                                style="width:100%; margin-top: 10px;">
+                        </div>
+                    </div>
+                </article>
+
+
+            </section>
+
+            <aside>
+                <div class="widget">
+                    <h3 class="widget-title">Próximos Eventos</h3>
+                    <div class="calendar">
+                        <div class="calendar-header">MARZO 2025</div>
+                        <div class="calendar-body">
+                            <div class="calendar-date">15</div>
+                            <div class="calendar-event">
+                                <span class="event-time">8:00 AM</span>
+                                <span>Feria de la Ciencia</span>
+                            </div>
+                            <div class="calendar-event">
+                                <span class="event-time">10:00 AM</span>
+                                <span>Olimpiadas Matemáticas</span>
+                            </div>
+                            <div class="calendar-date">22</div>
+                            <div class="calendar-event">
+                                <span class="event-time">Todo el día</span>
+                                <span>Día del Agua - Actividades</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="widget">
+                    <h3 class="widget-title">Contacto</h3>
+                    <p class="small">Correo: direccion@sanantoniovq.edu.co</p>
+                    <p class="small">Teléfono: (8) 735 12 34</p>
+                    <p class="small">Dirección: Cra 5 #10-25, Ventaquemada</p>
+                </div>
+            </aside>
+        </main>
+
+        <footer>
+            © El Informativo Paduino — Colegio San Antonio de Padua · Ventaquemada, Boyacá
+        </footer>
+    </div>
+
+    <script>
+        // Navegación simple para mostrar/ocultar secciones en un solo HTML
+        function goTo(section) {
+            const sections = ['home', 'editorial', 'noticias', 'opinion', 'cultura', 'deportes', 'tecnologia', 'creatividad', 'datos'];
+            sections.forEach(s => {
+                const el = document.getElementById(s + '-section');
+                if (!el) return;
+                el.style.display = (s === section) ? 'block' : 'none';
+            });
+            // marcar nav
+            document.querySelectorAll('#main-nav a').forEach(a => {
+                a.classList.toggle('active', a.dataset.section === section);
+            });
+            // mover foco
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Hacer que los enlaces del nav usen goTo
+        document.querySelectorAll('#main-nav a').forEach(a => {
+            a.addEventListener('click', function (e) {
+                e.preventDefault();
+                const sec = this.dataset.section;
+                goTo(sec);
+            });
+        });
+
+        // Si la URL contiene hash, abrir esa sección
+        (function () {
+            const hash = location.hash.replace('#', '');
+            if (hash) {
+                // si corresponde a una sección válida
+                const valid = ['home', 'editorial', 'noticias', 'opinion', 'cultura', 'deportes', 'tecnologia', 'creatividad', 'datos'];
+                if (valid.includes(hash)) goTo(hash);
+            }
+        })();
+    </script>
 </body>
+
 </html>
